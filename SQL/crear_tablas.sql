@@ -1,11 +1,11 @@
 
 -- BD DEPORTES_MVC
-CREATE TABLE Deportes (
+CREATE TABLE deportes (
     idDeporte tinyint unsigned AUTO_INCREMENT PRIMARY KEY,
     nombreDep varchar(15) NOT NULL
 );
   
-CREATE TABLE Usuarios (
+CREATE TABLE usuarios (
     idUsuario 	smallint unsigned AUTO_INCREMENT PRIMARY KEY,
     nombreUsuario varchar(30) NOT NULL UNIQUE,
     apeNombre varchar(60) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE Usuarios (
     perfil ENUM('c', 'u') NOT NULL -- parecido al check
 );
 
-CREATE TABLE Usuarios_deportes (
+CREATE TABLE usuarios_deportes (
 	idDeporte 	tinyint unsigned	NOT NULL,
 	idUsuario 	smallint unsigned	NOT NULL,
 	PRIMARY KEY (idDeporte, idUsuario),
@@ -24,7 +24,7 @@ CREATE TABLE Usuarios_deportes (
 );
 
 
-INSERT INTO Deportes(nombreDep) VALUES
+INSERT INTO deportes(nombreDep) VALUES
 ('fútbol'),
 ('baloncesto'),
 ('padel'),
@@ -39,7 +39,7 @@ INSERT INTO usuarios (nombreUsuario, apeNombre, pw, correo, telefono, perfil) VA
 ('usuario4', 'usuario 4 Escuelas Deportivas', '1234', 'usuario4@evg.es',  NULL,'u');
 
 
-INSERT INTO Usuarios_deportes (idDeporte,idUsuario) VALUES
+INSERT INTO usuarios_deportes (idDeporte,idUsuario) VALUES
 (1,2),
 (3,2),
 (3,4),
